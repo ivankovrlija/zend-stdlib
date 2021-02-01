@@ -40,7 +40,6 @@
     "extra": {
         "branch-alias": {
             "dev-master": "3.2.x-dev",
-            "dev-ivan": "dev-mergefix",
             "dev-develop": "3.3.x-dev"
         }
     },
