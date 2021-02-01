@@ -277,7 +277,19 @@ abstract class ArrayUtils
                 } elseif (! $preserveNumericKeys && is_int($key)) {
                     $a[] = $value;
                 } elseif (is_array($value) && is_array($a[$key])) {
-                    $a[$key] = static::merge($a[$key], $value, $preserveNumericKeys);
+                    if(count(array_filter(array_keys($a[$key]), 'is_string')) > 0){
+                        $a[$key] = static::merge($a[$key], $value, $preserveNumericKeys);
+                    }else{
+                        $indexArray = [];
+                        foreach($value as $keyValue => $v){
+                        
+                            if(is_int($keyValue)){
+                                array_push($indexArray, $v);
+                            }
+                            
+                        }
+                        $a[$key] = $indexArray;;
+                    }
                 } else {
                     $a[$key] = $value;
                 }
