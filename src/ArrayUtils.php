@@ -280,7 +280,7 @@ abstract class ArrayUtils
                     if(count(array_filter(array_keys($a[$key]), 'is_string')) > 0){
                         $a[$key] = static::merge($a[$key], $value, $preserveNumericKeys);
                     }else{
-                        $a[$key] = $indexArray;;
+                        $a[$key] = $value;
                     }
                 } else {
                     $a[$key] = $value;
